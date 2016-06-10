@@ -1,0 +1,39 @@
+In Lesson 17 you'll have already written a live compiler using a Babel CDN.
+Here is the input and output you should expect.
+
+*++++++INPUT++++++++*
+const App = (props) => {
+ var myStyle = {
+  backgroundColor: '#000',
+  height: 10
+ }
+ return (
+ <div style="myStyle">
+  <a href="#" onClick={update}></a>
+  {/* this is an awesome comment */}
+this is text here
+{i > 1 ? "more here" : "grrr"}
+
+  <App />
+ </div>
+ )
+}
+
+*++++++OUTPUT++++++++*
+"use strict";
+
+var App = function App(props) {
+  var myStyle = {
+    backgroundColor: '#000',
+    height: 10
+  };
+  return React.createElement(
+    "div",
+    { style: "myStyle" },
+    React.createElement("a", { href: "#", onClick: update }),
+    "this is text here",
+    i > 1 ? "more here" : "grrr",
+    React.createElement(App, null)
+  );
+};
+/* this is an awesome comment */
